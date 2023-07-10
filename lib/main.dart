@@ -37,25 +37,53 @@ class AnaEkran extends StatefulWidget {
   const AnaEkran({super.key});
 
   @override
-  State<AnaEkran> createState() => _AnaEkranState();
+  _AnaEkranState createState() => _AnaEkranState();
 }
 
 class _AnaEkranState extends State<AnaEkran> {
+  TextEditingController t1 = TextEditingController();
   List alisverisListesi = [];
+
+  elemanEkle() {
+    setState(() {
+      alisverisListesi.add(t1.text);
+      t1.clear();
+    });
+  }
+
+  elemanCikar() {
+    setState(() {
+      alisverisListesi.remove(t1.text);
+      t1.clear();
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     var child2 = null;
+    var child3 = null;
     return Container(
       child: Column(
         children: <Widget>[
-          ElevatedButton(
-            onPressed: null,
-            child: null,
+          Flexible(
+            child: ListView.builder(
+              itemCount: alisverisListesi.length,
+              itemBuilder: (context, indeksNumarasi) => ListTile(
+                subtitle: Text("Alışveriş Malzemeleri"),
+                title: Text(alisverisListesi[indeksNumarasi]),
+              ),
+            ),
+          ),
+          TextField(
+            controller: t1,
           ),
           ElevatedButton(
-            onPressed: null,
-            child: null,
+            onPressed: elemanEkle,
+            child: Text("Ekle"),
+          ),
+          ElevatedButton(
+            onPressed: elemanCikar,
+            child: Text("Çıkar"),
           ),
         ],
       ),
