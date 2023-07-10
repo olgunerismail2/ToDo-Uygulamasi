@@ -70,7 +70,7 @@ class _AnaEkranState extends State<AnaEkran> {
             child: ListView.builder(
               itemCount: alisverisListesi.length,
               itemBuilder: (context, indeksNumarasi) => ListTile(
-                subtitle: Text("Alışveriş Malzemeleri"),
+                subtitle: Text("Alişveriş Malzemeleri"),
                 title: Text(alisverisListesi[indeksNumarasi]),
               ),
             ),
