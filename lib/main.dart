@@ -77,6 +77,7 @@ class _AnaEkranState extends State<AnaEkran> {
           ),
           TextField(
             controller: t1,
+            //buton eklendi
           ),
           ElevatedButton(
             onPressed: elemanEkle,
