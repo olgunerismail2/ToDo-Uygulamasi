@@ -43,7 +43,7 @@ class AnaEkran extends StatefulWidget {
 class _AnaEkranState extends State<AnaEkran> {
   TextEditingController t1 = TextEditingController();
   List alisverisListesi = [];
-
+  // ekleme ve çıkarma komutları
   elemanEkle() {
     setState(() {
       alisverisListesi.add(t1.text);
