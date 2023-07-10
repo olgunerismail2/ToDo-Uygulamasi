@@ -65,7 +65,7 @@ class _AnaEkranState extends State<AnaEkran> {
     return Container(
       child: Column(
         children: <Widget>[
-          //Liste Görünümü Yapısı
+          //Liste Görünümü Yapısı eklendi
           Flexible(
             child: ListView.builder(
               itemCount: alisverisListesi.length,
